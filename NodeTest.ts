@@ -17,7 +17,7 @@ server.addListener("request", handleRequest);
 server.listen(port);
 
 function handleListen(): void {
-    console.log("Listening on port: " + port); 
+    console.log("Listening on port: " + port);  
 }
 
 function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
