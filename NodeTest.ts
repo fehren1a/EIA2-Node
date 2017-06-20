@@ -1,3 +1,12 @@
+/*
+Aufgabe: 10 - Client Server 
+Name: Jonas Fehrenbach
+Datum: 20.06.2017
+Matrikel: 254667
+
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
 console.log("Server starting");
 
 import Http = require("http");
@@ -32,8 +41,9 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     for (key in query) {
         console.log(key + ":" + query[key]);
     }
-
-    _response.write("Folgende Eissorten sind eingegangen: <br>");
+    
+    //Ausgabe auf Heroku
+    _response.write("Folgende Eissorten sind als Bestellung eingegangen: <br>");
     _response.write("Schokolade: " + query["Schokolade"] + "<br>");
     _response.write("Erdbeere: " + query["Erdbeere"] + "<br>");
     _response.write("Vanille: " + query["Vanille"] + "<br>");
@@ -42,7 +52,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.write("Zitrone: " + query["Zitrone"] + "<br>");
     _response.write("Mango: " + query["Mango"] + "<br>");
     _response.write("<br>");
-    _response.write("Als Behaelter hast du " + query["Container"] + " gewaehlt und als Topping " + query["Darbietung"] + "<br>");
+    _response.write("Als Behaeltnis hast du " + query["Container"] + " gewaehlt und als Toppings " + query["Darbietung"] + "<br>");
     _response.write("Die Bestellung wird an " + query["Email"] + " gesendet <br>");
     _response.end();
 }
